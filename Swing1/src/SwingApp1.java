@@ -1,4 +1,3 @@
-import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
 
 public class SwingApp1 {
@@ -10,12 +9,7 @@ public class SwingApp1 {
 			@Override
 			public void run() {
 				// TODO Auto-generated method stub
-				JFrame frame = new JFrame("Hello World");
-				
-				frame.setVisible(true);
-				frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-				frame.setSize(600, 500);
-				
+				new MainFrame();
 			}
 		});
 	}

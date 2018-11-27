@@ -1,4 +1,6 @@
 import java.awt.BorderLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -6,7 +8,7 @@ import javax.swing.JTextArea;
 
 public class MainFrame extends JFrame {
 	private JButton btn;
-	private JTextArea textArea;
+	private TextPanel textPanel;
 	
 	public MainFrame() {
 		super("Hello World");
@@ -14,10 +16,20 @@ public class MainFrame extends JFrame {
 		setLayout(new BorderLayout());
 		
 		btn = new JButton("Click Me!");
-		textArea = new JTextArea();
+		textPanel = new TextPanel();
+		
+		btn.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				textPanel.appendText("Hello\n");
+			}
+			
+		});
 		
 		add(btn, BorderLayout.SOUTH);
-		add(textArea, BorderLayout.CENTER);
+		add(textPanel, BorderLayout.CENTER);
 		
 		setVisible(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

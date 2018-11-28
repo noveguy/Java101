@@ -4,11 +4,11 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JTextArea;
 
 public class MainFrame extends JFrame {
 	private JButton btn;
 	private TextPanel textPanel;
+	private ToolBar toolBar;
 	
 	public MainFrame() {
 		super("Hello World");
@@ -17,6 +17,7 @@ public class MainFrame extends JFrame {
 		
 		btn = new JButton("Click Me!");
 		textPanel = new TextPanel();
+		toolBar = new ToolBar();
 		
 		btn.addActionListener(new ActionListener() {
 
@@ -30,6 +31,7 @@ public class MainFrame extends JFrame {
 		
 		add(btn, BorderLayout.SOUTH);
 		add(textPanel, BorderLayout.CENTER);
+		add(toolBar, BorderLayout.NORTH);
 		
 		setVisible(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
